@@ -4,6 +4,7 @@ import { ConfigDto } from '../config-selector/config-dto';
 import { ListMessageComponent } from "./listes/list-message/list-message.component";
 import { ListTimesComponent } from "./listes/list-times/list-times.component";
 import { ListAffectationsComponent } from "./listes/list-affectations/list-affectations.component";
+import { ActiveComponent } from './active-component.enum'; // Import de l'enum
 
 @Component({
   selector: 'app-main-page',
@@ -13,24 +14,22 @@ import { ListAffectationsComponent } from "./listes/list-affectations/list-affec
 })
 export class MainPageComponent implements OnInit {
   message: string = '';
-  activeComponent: string = 'list-message'; // Composant actif par défaut
-
+  activeComponent: ActiveComponent = ActiveComponent.Vide; // Composant actif par défaut
+  currentConfig? : ConfigDto;
 
   constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {
     // S'abonne à l'événement "temps"
     this.sharedService.tempsEvent$.subscribe((config: ConfigDto) => {
-      this.message = `Click temps: ${config.name}`;
+      this.activeComponent = ActiveComponent.ListAffectations; 
+      this.currentConfig = config;
     });
 
     // S'abonne à l'événement "message"
     this.sharedService.messageEvent$.subscribe((config: ConfigDto) => {
-      this.message = `Click message: ${config.name}`;
+      this.activeComponent = ActiveComponent.ListMessage; 
+      this.currentConfig = config;
     });
-
   }
-    showComponent(component: string): void {
-      this.activeComponent = component; // Change le composant actif
-    }
 }

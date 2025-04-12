@@ -1,4 +1,44 @@
-body, html{
-    margin: 0;
-    padding: 0;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Police moderne */
+  background-color: #36393f; /* Fond sombre */
+  color: #ffffff; /* Texte clair */
+}
+
+button {
+  background-color: #5865f2; /* Couleur principale Discord */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #4752c4; /* Couleur au survol */
+}
+
+h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #2f3136; /* Fond des éléments */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #40444b; /* Fond au survol */
 }

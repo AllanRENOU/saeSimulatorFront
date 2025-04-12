@@ -1,6 +1,5 @@
 :host {
   flex: 1; /* Prend tout l'espace restant */
-  background-color: red;
   color: white;
 }
 
@@ -8,9 +7,48 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
+  background-color: #36393f; /* Fond sombre */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre légère */
 }
 
-.main-page > * {
-  flex: 1; /* Le composant actif occupe tout l'espace */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  flex: 1;
+}
+
+
+.welcome {
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.welcome h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #5865f2; /* Couleur principale Discord */
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  color: #b9bbbe; /* Couleur secondaire */
+}
+
+/* Animation pour un effet d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

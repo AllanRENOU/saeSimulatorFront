@@ -1,16 +1,33 @@
 :host {
   width: 250px;
-  background-color: blue;
-  color: white;
-  height: 100%; /* Prend toute la hauteur */
+  background-color: #2f3136; /* Fond sombre */
+  color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-right: 1px solid #202225; /* Ligne de séparation */
+}
+
+h3 {
+  font-size: 16px;
+  color: #b9bbbe; /* Texte secondaire */
+  margin-bottom: 10px;
 }
 
 ul {
-  list-style-type: none; /* Supprime les puces */
-  padding: 0; /* Supprime le padding par défaut */
-  margin: 0; /* Supprime le margin par défaut */
+  flex: 1;
+  overflow-y: auto;
 }
 
 li {
-  margin-bottom: 10px; /* Ajoute un espacement entre les éléments si nécessaire */
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #40444b; /* Fond des éléments */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #5865f2; /* Couleur au survol */
 }

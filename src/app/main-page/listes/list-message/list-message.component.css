@@ -1,0 +1,32 @@
+/* Exemple pour list-message.component.css */
+:host {
+    display: flex;
+    flex-direction: column;
+    background-color: #2f3136; /* Fond sombre */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre légère */
+  }
+  
+  h3 {
+    color: #b9bbbe; /* Texte secondaire */
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #40444b; /* Fond des éléments */
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  li:hover {
+    background-color: #5865f2; /* Couleur au survol */
+  }

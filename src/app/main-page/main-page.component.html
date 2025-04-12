@@ -1,15 +1,14 @@
 <div class="main-page">
-  <div class="controls">
-    <button (click)="showComponent('list-message')">Afficher Messages</button>
-    <button (click)="showComponent('list-times')">Afficher Temps</button>
-    <button (click)="showComponent('list-affectations')">Afficher Affectations</button>
-  </div>
-
   @if (activeComponent == "list-message") {
     <app-list-message></app-list-message>
   } @else if (activeComponent == "list-times") {
     <app-list-times></app-list-times>
   } @else if (activeComponent == "list-affectations") {
     <app-list-affectations></app-list-affectations>
+  } @else {
+    <div class="welcome">
+      <h1>SAE Simulator</h1>
+      <p>Bienvenue dans votre simulateur SIRI</p>
+    </div>
   }
 </div>
