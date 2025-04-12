@@ -1,0 +1,10 @@
+<div>
+  <h3>Liste des Messages</h3>
+  <ul>
+    @for ( message of messages; track $index) {
+      <li>{{ message }}</li>
+    }@empty {
+      <li>Aucun message trouvé.</li>
+    }
+  </ul>
+</div>

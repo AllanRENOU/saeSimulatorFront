@@ -1,0 +1,10 @@
+<div>
+  <h3>Liste des Temps</h3>
+  <ul>
+    @for ( time of times; track $index) {
+      <li>{{ time }}</li>
+    }@empty {
+      <li>Aucun message trouvé.</li>
+    }
+  </ul>
+</div>

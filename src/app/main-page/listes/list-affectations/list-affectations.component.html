@@ -1,0 +1,11 @@
+<div>
+  <h3>Liste des Affectations</h3>
+  <ul>
+    @for (affectation of affectations; track $index) {
+      <li>{{ affectation }}</li>
+    }@empty {
+      <li>Aucune affectation trouvée.</li>
+    }
+    
+  </ul>
+</div>

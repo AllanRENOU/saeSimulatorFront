@@ -1,7 +1,8 @@
 <div class="config-item" (click)="toggleButtons()">
-  <strong>{{ config.name }}</strong> - {{ config.host }}
+  <div class="config-name">{{ config.name }}</div>
+  <div class="config-host">{{ config.host }}</div>
 </div>
 <div class="buttons-container" [class.show]="showButtons">
-  <button>Temps</button>
-  <button>Message</button>
+  <button (click)="onTempsClick(); $event.stopPropagation()">Temps</button>
+  <button (click)="onMessageClick(); $event.stopPropagation()">Message</button>
 </div>

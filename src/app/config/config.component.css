@@ -11,6 +11,16 @@
   background-color: #003d80;
 }
 
+.config-name {
+  font-size: 1.2em; /* Taille plus grande pour le nom */
+  font-weight: bold; /* Met le nom en gras */
+}
+
+.config-host {
+  font-size: 0.9em; /* Taille plus petite pour le host */
+  color: #d0d0d0; /* Couleur plus discrète pour le host */
+}
+
 .buttons-container {
   overflow: hidden;
   max-height: 0;
