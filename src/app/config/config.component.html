@@ -1,0 +1,7 @@
+<div class="config-item" (click)="toggleButtons()">
+  <strong>{{ config.name }}</strong> - {{ config.host }}
+</div>
+<div class="buttons-container" [class.show]="showButtons">
+  <button>Temps</button>
+  <button>Message</button>
+</div>

@@ -1,0 +1,5 @@
+:host {
+  flex: 1; /* Prend tout l'espace restant */
+  background-color: red;
+  color: white;
+}

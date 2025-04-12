@@ -1,0 +1,4 @@
+.container {
+  display: flex;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+}
