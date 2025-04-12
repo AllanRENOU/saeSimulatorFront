@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { ConfigDto } from './config-dto';
+import { ConfigDto } from '../models/config-dto';
 import { ConfigComponent } from "../config/config.component";
 
 @Component({

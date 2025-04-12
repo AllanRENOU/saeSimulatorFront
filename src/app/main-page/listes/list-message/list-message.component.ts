@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ConfigDto } from '../../../models/config-dto';
 
 @Component({
   selector: 'app-list-message',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-message.component.css']
 })
 export class ListMessageComponent {
+  @Input() 
+  config?: ConfigDto;
   messages: string[] = ['Message 1', 'Message 2', 'Message 3'];
 }

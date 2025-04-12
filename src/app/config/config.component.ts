@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ConfigDto } from '../config-selector/config-dto';
+import { ConfigDto } from '../models/config-dto';
 import { SharedService } from '../shared.service';
 
 @Component({

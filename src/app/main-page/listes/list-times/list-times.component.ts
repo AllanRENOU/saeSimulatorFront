@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ConfigDto } from '../../../models/config-dto';
 
 @Component({
   selector: 'app-list-times',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-times.component.css']
 })
 export class ListTimesComponent {
+  @Input()
+  config?: ConfigDto;
   times: string[] = ['10:00', '12:00', '14:00'];
 }

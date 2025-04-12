@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
-import { ConfigDto } from '../config-selector/config-dto';
+import { ConfigDto } from '../models/config-dto';
 import { ListMessageComponent } from "./listes/list-message/list-message.component";
 import { ListTimesComponent } from "./listes/list-times/list-times.component";
 import { ListAffectationsComponent } from "./listes/list-affectations/list-affectations.component";
@@ -22,14 +22,14 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
     // S'abonne à l'événement "temps"
     this.sharedService.tempsEvent$.subscribe((config: ConfigDto) => {
-      this.activeComponent = ActiveComponent.ListAffectations; 
       this.currentConfig = config;
+      this.activeComponent = ActiveComponent.ListAffectations; 
     });
 
     // S'abonne à l'événement "message"
     this.sharedService.messageEvent$.subscribe((config: ConfigDto) => {
-      this.activeComponent = ActiveComponent.ListMessage; 
       this.currentConfig = config;
+      this.activeComponent = ActiveComponent.ListMessage; 
     });
   }
 }

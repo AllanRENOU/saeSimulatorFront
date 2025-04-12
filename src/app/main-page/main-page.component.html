@@ -1,10 +1,10 @@
 <div class="main-page">
   @if (activeComponent == "list-message") {
-    <app-list-message></app-list-message>
+    <app-list-message [config]="currentConfig"></app-list-message>
   } @else if (activeComponent == "list-times") {
-    <app-list-times></app-list-times>
+    <app-list-times [config]="currentConfig"></app-list-times>
   } @else if (activeComponent == "list-affectations") {
-    <app-list-affectations></app-list-affectations>
+    <app-list-affectations [config]="currentConfig"></app-list-affectations>
   } @else {
     <div class="welcome">
       <h1>SAE Simulator</h1>
