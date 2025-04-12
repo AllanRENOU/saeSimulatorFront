@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 import { ConfigDto } from './config-dto';
 import { ConfigComponent } from "../config/config.component";
 
@@ -8,10 +9,19 @@ import { ConfigComponent } from "../config/config.component";
   styleUrls: ['./config-selector.component.css'],
   imports: [ConfigComponent]
 })
-export class ConfigSelectorComponent {
-  configs: ConfigDto[] = [
-    { name: 'Config 1', host: 'http://localhost:3000' },
-    { name: 'Config 2', host: 'http://localhost:4000' },
-    { name: 'Config 3', host: 'http://localhost:5000' }
-  ];
+export class ConfigSelectorComponent implements OnInit {
+  configs: ConfigDto[] = [];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.dataService.getConfigs().subscribe(
+      (data) => {
+        this.configs = data;
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des configurations :', error);
+      }
+    );
+  }
 }
