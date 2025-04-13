@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../shared.service';
+import { SharedService } from '../services/shared.service';
 import { ConfigDto } from '../models/config-dto';
 import { ListMessageComponent } from "./listes/list-message/list-message.component";
 import { ListTimesComponent } from "./listes/list-times/list-times.component";
 import { ListAffectationsComponent } from "./listes/list-affectations/list-affectations.component";
 import { ActiveComponent } from './active-component.enum';
-import { ListStoppointComponent } from "./listes/list-stoppoint/list-stoppoint.component"; // Import de l'enum
+import { ListStoppointComponent } from "./listes/list-stoppoint/list-stoppoint.component";
+import { AffectationDto } from '../models/affectation-dto';
 
 @Component({
   selector: 'app-main-page',
@@ -31,6 +32,12 @@ export class MainPageComponent implements OnInit {
     this.sharedService.messageEvent$.subscribe((config: ConfigDto) => {
       this.currentConfig = config;
       this.activeComponent = ActiveComponent.ListMessage; 
+    });
+
+    // S'abonne à l'événement "affectation"
+    this.sharedService.affectationEvent$.subscribe((affectation: AffectationDto) => {
+      console.log('Affectation sélectionnée :', affectation);
+      this.activeComponent = ActiveComponent.ListTimes; // Passe à ListTimes
     });
   }
 }

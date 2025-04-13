@@ -3,7 +3,9 @@
 } @else {
 <ul>
   @for (affectation of affectations; track $index) {
-    <li>[{{affectation.stopCode}}] Ligne {{ affectation.ligne }} vers {{affectation.destination}}</li>
+    <li (click)="onAffectationClick(affectation)">
+      [{{affectation.stopCode}}] Ligne {{ affectation.ligne }} vers {{affectation.destination}}
+    </li>
   }@empty {
     <li>Aucune affectation trouvée.</li>
   }

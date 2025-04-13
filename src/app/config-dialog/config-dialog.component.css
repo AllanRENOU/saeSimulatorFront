@@ -1,0 +1,59 @@
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  background-color: #2f3136;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  width: 300px;
+}
+
+.dialog h3 {
+  margin-top: 0;
+}
+
+.dialog label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dialog input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dialog-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dialog-actions button:first-child {
+  background-color: #5865f2;
+  color: white;
+}
+
+.dialog-actions button:last-child {
+  background-color: #d9534f;
+  color: white;
+}

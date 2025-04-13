@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ConfigDto } from '../../../models/config-dto';
-import { DataService } from '../../../data.service';
+import { DataService } from '../../../services/data.service';
 import { AffectationDto } from '../../../models/affectation-dto';
+import { SharedService } from '../../../services/shared.service';
 
 @Component({
   selector: 'app-list-affectations',
@@ -14,7 +15,7 @@ export class ListAffectationsComponent {
   affectations: AffectationDto[] = [];
   isLoading: boolean = true; // État de chargement
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private sharedService: SharedService) {}
 
   ngOnInit(): void {
     this.dataService.getAffectations().subscribe(
@@ -27,5 +28,9 @@ export class ListAffectationsComponent {
         this.isLoading = false; // Fin du chargement même en cas d'erreur
       }
     );
+  }
+
+  onAffectationClick(affectation: AffectationDto): void {
+    this.sharedService.emitAffectationEvent(affectation); // Émet l'événement
   }
 }

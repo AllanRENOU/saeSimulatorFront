@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ConfigDto } from '../../../models/config-dto';
 import { StoppointnDto } from '../../../models/stoppoint-dto';
-import { DataService } from '../../../data.service';
+import { DataService } from '../../../services/data.service';
 import { StoppointComponent } from "./stoppoint/stoppoint.component";
 
 @Component({

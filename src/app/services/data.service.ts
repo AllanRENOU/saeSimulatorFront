@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ConfigDto } from './models/config-dto';
-import { AffectationDto } from './models/affectation-dto';
-import { StoppointnDto } from './models/stoppoint-dto';
+import { ConfigDto } from '../models/config-dto';
+import { AffectationDto } from '../models/affectation-dto';
+import { StoppointnDto } from '../models/stoppoint-dto';
 
 @Injectable({
   providedIn: 'root'

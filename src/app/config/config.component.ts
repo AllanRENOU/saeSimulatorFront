@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ConfigDto } from '../models/config-dto';
-import { SharedService } from '../shared.service';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-config',

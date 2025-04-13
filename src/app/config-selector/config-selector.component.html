@@ -2,10 +2,18 @@
   <h3>Configurations disponibles</h3>
   <ul>
     @for (config of configs; track config.name) {
-        <li>
-            <app-config [config]="config"></app-config>
-        </li>
+      <li>
+        <app-config [config]="config"></app-config>
+      </li>
     }
-
   </ul>
+  <button class="create-config-button" (click)="onCreateConfig()">Ajouter une configuration</button>
+
+  @if (showDialog) {
+    <app-config-dialog
+    (configCreated)="onConfigCreated($event)"
+    (closeDialog)="onCloseDialog()">
+    </app-config-dialog>
+  }
+  
 </div>

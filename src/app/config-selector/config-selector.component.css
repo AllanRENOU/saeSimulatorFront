@@ -31,3 +31,20 @@ li {
 li:hover {
   background-color: #5865f2; /* Couleur au survol */
 }
+
+.create-config-button {
+  display: block;
+  margin: 20px auto; /* Centre le bouton horizontalement */
+  padding: 10px;
+  background-color: #5865f2; /* Couleur principale Discord */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.create-config-button:hover {
+  background-color: #4752c4; /* Couleur au survol */
+}
