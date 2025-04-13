@@ -28,19 +28,16 @@ export class ConfigSelectorComponent implements OnInit {
   }
 
   onCreateConfig(): void {
-    //const newConfig = new ConfigDto('Nouvelle Config', 'http://localhost:3000');
-    //this.configs.push(newConfig);
-    //console.log('Configuration créée :', newConfig);
-    this.showDialog = true; // Ouvre la popup
+    this.showDialog = true;
   }
 
   onConfigCreated(newConfig: ConfigDto): void {
     this.configs.push(newConfig);
     console.log('Configuration créée :', newConfig);
-    this.showDialog = false; // Ferme la popup
+    this.showDialog = false;
   }
 
   onCloseDialog(): void {
-    this.showDialog = false; // Ferme la popup
+    this.showDialog = false;
   }
 }

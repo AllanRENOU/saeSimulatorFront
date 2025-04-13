@@ -1,6 +1,6 @@
 <div class="stoppoint" (click)="toggleAffectations()">
   @if (stoppoint) {
-    {{ stoppoint.name }} [{{ stoppoint.code }}]
+    {{ stoppoint.name }} - {{ stoppoint.ident }} - {{ stoppoint.area }}
   } @else {
     Pas d'information sur l'arrêt.
   }

@@ -1,10 +1,28 @@
 <div>
   <h3>Liste des Temps</h3>
-  <ul>
-    @for ( time of times; track $index) {
-      <li>{{ time }}</li>
+  <div class="grid-container">
+    <!-- En-têtes -->
+    <div class="grid-header-row">
+      <div class="grid-header">Course</div>
+      <div class="grid-header">Heure Théorique</div>
+      <div class="grid-header">Heure Réelle</div>
+      <div class="grid-header">Quai</div>
+      <div class="grid-header">Ligne</div>
+      <div class="grid-header">Destination</div>
+    </div>
+
+    <!-- Données -->
+    @for (time of times; track $index) {
+      <div class="grid-row">
+        <div class="grid-item">{{ time.course }}</div>
+        <div class="grid-item">{{ time.heureTheo }}</div>
+        <div class="grid-item">{{ time.heureReel }}</div>
+        <div class="grid-item">{{ time.quai }}</div>
+        <div class="grid-item">{{ time.line }}</div>
+        <div class="grid-item">{{ time.destination }}</div>
+      </div>
     }@empty {
-      <li>Aucun message trouvé.</li>
+      <div class="grid-empty">Aucun temps trouvé.</div>
     }
-  </ul>
+  </div>
 </div>

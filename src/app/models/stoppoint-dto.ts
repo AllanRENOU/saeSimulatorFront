@@ -1,6 +1,8 @@
 export class StoppointnDto {
-    constructor(
-      public code: string,
-      public name : string
-    ) {}
-  }
+  constructor(
+    public id: number,
+    public ident: string,
+    public name: string,
+    public area: string
+  ) {}
+}

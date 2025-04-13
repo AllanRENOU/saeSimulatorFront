@@ -30,3 +30,81 @@
   li:hover {
     background-color: #5865f2; /* Couleur au survol */
   }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead {
+  background-color: #5865f2; /* Couleur principale Discord */
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Couleur de fond pour les lignes paires */
+}
+
+tbody tr:hover {
+  background-color: #e0e0e0; /* Couleur au survol */
+}
+
+td {
+  color: #333;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacement entre les lignes */
+  margin-top: 10px;
+}
+
+.grid-header-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 colonnes de largeur égale */
+  gap: 10px;
+  background-color: #5865f2; /* Couleur principale Discord */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.grid-header {
+  font-weight: bold;
+  text-align: left;    
+  text-align: center;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 colonnes de largeur égale */
+  gap: 10px;
+  background-color: #f2f2f2; /* Fond des lignes */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.grid-item {
+  color: #333;
+  text-align: center;
+}
+
+.grid-item:hover {
+  background-color: #e0e0e0; /* Couleur au survol */
+}
+
+.grid-empty {
+  text-align: center;
+  color: #999;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}

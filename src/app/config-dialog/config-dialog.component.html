@@ -1,6 +1,6 @@
 <div class="dialog-backdrop">
   <div class="dialog">
-    <h3>Créer une nouvelle configuration</h3>
+    <h3>Ajouter une configuration</h3>
     <form>
       <label>
         Nom :
@@ -10,9 +10,17 @@
         Host :
         <input type="text" [(ngModel)]="config.host" name="host" placeholder="URL du host" />
       </label>
+      <label>
+        Port de la base de données :
+        <input type="number" [(ngModel)]="config.dbPort" name="dbPort" placeholder="Port de la base de données" />
+      </label>
+      <label>
+        Path de endpoint siri:
+        <input type="text" [(ngModel)]="config.siriPath" name="siriPath" placeholder="Path SIRI" />
+      </label>
       <div class="dialog-actions">
-        <button type="button" (click)="onCreate()">Créer</button>
         <button type="button" (click)="onCancel()">Annuler</button>
+        <button type="button" (click)="onCreate()">Créer</button>
       </div>
     </form>
   </div>

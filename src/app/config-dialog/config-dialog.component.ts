@@ -12,15 +12,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './config-dialog.component.css'
 })
 export class ConfigDialogComponent {
-  
-  config: ConfigDto = new ConfigDto('', '');
+    config: ConfigDto = new ConfigDto( '', '', '', 3306, '/SiriDeliveryServices/services/SiriDeliverryServices');
 
   @Output() configCreated = new EventEmitter<ConfigDto>();
   @Output() closeDialog = new EventEmitter<void>();
 
   onCreate(): void {
-    if (this.config.name && this.config.host) {
-      this.configCreated.emit(this.config);
+    if (this.config.name && this.config.host && this.config.dbPort && this.config.siriPath) {
+      this.configCreated.emit(this.config); // Émet la configuration créée
     }
   }
 
