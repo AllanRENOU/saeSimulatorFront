@@ -2,7 +2,7 @@
   width: 250px;
   background-color: #2f3136; /* Fond sombre */
   color: #ffffff;
-  height: 100%;
+  height: calc(100vh - 20px);
   display: flex;
   flex-direction: column;
   padding: 10px;

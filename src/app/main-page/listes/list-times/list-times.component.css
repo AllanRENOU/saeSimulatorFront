@@ -1,35 +1,35 @@
 /* Exemple pour list-message.component.css */
 :host {
-    display: flex;
-    flex-direction: column;
-    background-color: #2f3136; /* Fond sombre */
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre légère */
-  }
-  
-  h3 {
-    color: #b9bbbe; /* Texte secondaire */
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #40444b; /* Fond des éléments */
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  li:hover {
-    background-color: #5865f2; /* Couleur au survol */
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #2f3136; /* Fond sombre */
+  color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box; /* Inclut le padding dans la hauteur totale */
+}
+
+h3 {
+  color: #b9bbbe; /* Texte secondaire */
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #40444b; /* Fond des éléments */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #5865f2; /* Couleur au survol */
+}
 
 table {
   width: 100%;
@@ -65,16 +65,22 @@ td {
   flex-direction: column;
   gap: 10px; /* Espacement entre les lignes */
   margin-top: 10px;
+  flex: 1; /* Prend tout l'espace disponible */
+  max-height: calc(95vh - 60px); /* Ajuste la hauteur pour inclure le header */
+  overflow-y: auto; /* Ajoute un scroll vertical si nécessaire */
 }
 
 .grid-header-row {
   display: grid;
-  grid-template-columns: repeat(9, 1fr); 
+  grid-template-columns: repeat(9, 1fr); /* 9 colonnes de largeur égale */
   gap: 10px;
   background-color: #5865f2; /* Couleur principale Discord */
   color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0; /* Bordure arrondie en haut */
+  position: sticky; /* Rend le header fixe */
+  top: 0; /* Fixe le header en haut */
+  z-index: 1; /* Assure que le header reste au-dessus des lignes */
 }
 
 .grid-header {
