@@ -1,0 +1,11 @@
+<div>
+    <h3>Liste des arrets</h3>
+    <ul>
+      @for ( stoppoint of stoppoints; track $index) {
+        <li>{{ stoppoint.name }} [{{stoppoint.code}}]</li>
+      }@empty {
+        <li>Aucun arret trouvé.</li>
+      }
+    </ul>
+  </div>
+  

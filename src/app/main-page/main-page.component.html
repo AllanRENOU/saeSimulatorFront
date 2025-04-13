@@ -5,6 +5,8 @@
     <app-list-times [config]="currentConfig"></app-list-times>
   } @else if (activeComponent == "list-affectations") {
     <app-list-affectations [config]="currentConfig"></app-list-affectations>
+  } @else if (activeComponent == "list-stoppoints") {
+    <app-list-stoppoint [config]="currentConfig"></app-list-stoppoint>
   } @else {
     <div class="welcome">
       <h1>SAE Simulator</h1>
