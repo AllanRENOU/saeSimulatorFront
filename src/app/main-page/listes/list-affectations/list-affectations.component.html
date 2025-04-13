@@ -2,7 +2,7 @@
   <h3>Liste des Affectations</h3>
   <ul>
     @for (affectation of affectations; track $index) {
-      <li>{{ affectation }}</li>
+      <li>[{{affectation.stopCode}}] Ligne {{ affectation.ligne }} vers {{affectation.destination}}</li>
     }@empty {
       <li>Aucune affectation trouvée.</li>
     }
