@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ConfigDto } from '../../../models/config-dto';
 import { TimeDto } from '../../../models/time-dto';
+import { DataService } from '../../../services/data.service';
 
 @Component({
   selector: 'app-list-times',
@@ -10,10 +11,22 @@ import { TimeDto } from '../../../models/time-dto';
 export class ListTimesComponent {
   @Input()
   config?: ConfigDto;
+  times: TimeDto[] = [];
+  isLoading = true;
 
-  times: TimeDto[] = [
-    new TimeDto('Course 1', 1, true, 5, '10:00', '10:05', 'Quai A', 'Via X', 'Ligne 1', 'Destination 1', 'StopPoint 1'),
-    new TimeDto('Course 2', 0, false, 0, '12:00', '12:00', 'Quai B', 'Via Y', 'Ligne 2', 'Destination 2', 'StopPoint 2'),
-    new TimeDto('Course 3', 1, true, -3, '14:00', '13:57', 'Quai C', 'Via Z', 'Ligne 3', 'Destination 3', 'StopPoint 3')
-  ];
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.dataService.getTimes().subscribe(
+      (data) => {
+        this.times = data;
+        this.isLoading = false; // Fin du chargement
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des affectations :', error);
+        this.isLoading = false; // Fin du chargement même en cas d'erreur
+      }
+    );
+  }
+
 }

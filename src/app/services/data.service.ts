@@ -26,4 +26,8 @@ export class DataService {
   getAffectations(): Observable<AffectationDto[]> {
     return this.http.get<AffectationDto[]>(this.url + 'affectation');
   }
+
+  getTimes(): Observable<any[]> {
+    return this.http.get<any[]>(this.url + 'times');
+  }
 }

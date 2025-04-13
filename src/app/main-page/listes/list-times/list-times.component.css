@@ -69,7 +69,7 @@ td {
 
 .grid-header-row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 colonnes de largeur égale */
+  grid-template-columns: repeat(9, 1fr); 
   gap: 10px;
   background-color: #5865f2; /* Couleur principale Discord */
   color: white;
@@ -85,20 +85,16 @@ td {
 
 .grid-row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 colonnes de largeur égale */
+  grid-template-columns: repeat(9, 1fr);
   gap: 10px;
-  background-color: #f2f2f2; /* Fond des lignes */
+  background-color: #40444b;
   padding: 10px;
   border-radius: 5px;
+  color: white;
 }
 
 .grid-item {
-  color: #333;
   text-align: center;
-}
-
-.grid-item:hover {
-  background-color: #e0e0e0; /* Couleur au survol */
 }
 
 .grid-empty {
