@@ -21,7 +21,6 @@ export class ListStoppointComponent {
   ngOnInit(): void {
     this.dataService.getStoppoints().subscribe(
       (data) => {
-        console.log("Data received:", data);
         this.stoppoints = data;
       },
       (error) => {

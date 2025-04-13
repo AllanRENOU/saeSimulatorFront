@@ -10,3 +10,15 @@
 .stoppoint:hover {
     background-color: #40444b; /* Fond au survol */
 }
+
+.affectations-container {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.affectations-container.show {
+    max-height: 500px; /* Ajustez selon la hauteur maximale de la liste */
+    opacity: 1;
+}

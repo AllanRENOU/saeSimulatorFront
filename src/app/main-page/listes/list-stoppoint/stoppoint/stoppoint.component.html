@@ -1,8 +1,11 @@
+<div class="stoppoint" (click)="toggleAffectations()">
+  @if (stoppoint) {
+    {{ stoppoint.name }} [{{ stoppoint.code }}]
+  } @else {
+    Pas d'information sur l'arrêt.
+  }
+</div>
 
-<div class="stoppoint">
-@if (stoppoint) {
-{{ stoppoint.name }} [{{ stoppoint.code }}]
-} @else {
-    Pas d'information sur l'arret.
-}
+<div class="affectations-container" [class.show]="showAffectations">
+    <app-list-affectations [config]="config"></app-list-affectations>
 </div>

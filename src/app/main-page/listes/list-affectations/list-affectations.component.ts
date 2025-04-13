@@ -12,6 +12,7 @@ export class ListAffectationsComponent {
   @Input() 
   config?: ConfigDto;
   affectations: AffectationDto[] = [];
+  isLoading: boolean = true; // État de chargement
 
   constructor(private dataService: DataService) {}
 
@@ -19,9 +20,11 @@ export class ListAffectationsComponent {
     this.dataService.getAffectations().subscribe(
       (data) => {
         this.affectations = data;
+        this.isLoading = false; // Fin du chargement
       },
       (error) => {
         console.error('Erreur lors de la récupération des affectations :', error);
+        this.isLoading = false; // Fin du chargement même en cas d'erreur
       }
     );
   }

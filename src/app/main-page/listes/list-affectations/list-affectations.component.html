@@ -1,11 +1,11 @@
-<div>
-  <h3>Liste des Affectations</h3>
-  <ul>
-    @for (affectation of affectations; track $index) {
-      <li>[{{affectation.stopCode}}] Ligne {{ affectation.ligne }} vers {{affectation.destination}}</li>
-    }@empty {
-      <li>Aucune affectation trouvée.</li>
-    }
-    
-  </ul>
-</div>
+@if (isLoading) {
+  <div class="loader"></div>
+} @else {
+<ul>
+  @for (affectation of affectations; track $index) {
+    <li>[{{affectation.stopCode}}] Ligne {{ affectation.ligne }} vers {{affectation.destination}}</li>
+  }@empty {
+    <li>Aucune affectation trouvée.</li>
+  }
+</ul>
+}
