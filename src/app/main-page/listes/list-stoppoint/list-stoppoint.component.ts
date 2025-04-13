@@ -2,10 +2,11 @@ import { Component, Input } from '@angular/core';
 import { ConfigDto } from '../../../models/config-dto';
 import { StoppointnDto } from '../../../models/stoppoint-dto';
 import { DataService } from '../../../data.service';
+import { StoppointComponent } from "./stoppoint/stoppoint.component";
 
 @Component({
   selector: 'app-list-stoppoint',
-  imports: [],
+  imports: [StoppointComponent],
   templateUrl: './list-stoppoint.component.html',
   styleUrl: './list-stoppoint.component.css'
 })
