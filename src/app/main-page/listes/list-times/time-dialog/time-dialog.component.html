@@ -1,0 +1,59 @@
+<div class="dialog-backdrop">
+  <div class="dialog">
+    <h3>Modifier un passage</h3>
+    <form>
+      <!--
+      <label>
+        Course :
+        <input type="number" [(ngModel)]="newTime.course" name="course" placeholder="Numéro de course" />
+      </label>-->
+      <label>
+        Flag :
+        <input type="text" [(ngModel)]="newTime.flag" name="flag" placeholder="Etat (1= RT, 7=TH, 4=Cancelled)" />
+      </label>
+      <label>
+        Est à quai :
+        <input type="checkbox" [(ngModel)]="newTime.isAQuai" name="isAQuai" placeholder="Véhicule à l'arret" />
+      </label>
+      <!--
+      <label>Delais :
+        <input type="number" [(ngModel)]="newTime.delais" name="delais" placeholder="Retard" />
+      </label>
+      -->
+      <label>
+        Heure Théorique :
+        <input type="text" [(ngModel)]="newTime.heureTheo" name="heureTheo" placeholder="Passage théorique" />
+      </label>
+      <label>
+        Heure Réel :
+        <input type="text" [(ngModel)]="newTime.heureReel" name="heureReel" placeholder="Passage temps réel" />
+      </label>
+      <label>
+        Quai :
+        <input type="text" [(ngModel)]="newTime.quai" name="quai" placeholder="Quai" />
+      </label>
+      <label>
+        Via :
+        <input type="text" [(ngModel)]="newTime.via" name="via" placeholder="Via" />
+      </label>
+      <!--
+      <label>
+        Line :
+        <input type="text" [(ngModel)]="newTime.line" name="line" placeholder="Ligne" />
+      </label>
+      <label>
+        Destination :
+        <input type="text" [(ngModel)]="newTime.destination" name="destination" placeholder="Sestination" />
+      </label>
+      <label>
+        StopPoint :
+        <input type="text" [(ngModel)]="newTime.stopPoint" name="stopPoint" placeholder="Arret" />
+      </label>
+      -->
+      <div class="dialog-actions">
+        <button type="button" (click)="onCancel()">Annuler</button>
+        <button type="button" (click)="onSend()">Envoyer</button>
+      </div>
+    </form>
+  </div>
+</div>

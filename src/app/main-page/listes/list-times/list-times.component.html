@@ -28,5 +28,12 @@
     }@empty {
       <div class="grid-empty">Aucun temps trouvé.</div>
     }
+
+    @if (showDialog) {
+      <app-time-dialog
+        [time]="timeToEdit"
+        (closeDialog)="onCloseDialog()">
+      </app-time-dialog>
+    }
   </div>
 </div>

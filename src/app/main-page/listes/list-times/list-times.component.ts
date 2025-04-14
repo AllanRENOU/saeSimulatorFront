@@ -3,11 +3,17 @@ import { ConfigDto } from '../../../models/config-dto';
 import { TimeDto } from '../../../models/time-dto';
 import { DataService } from '../../../services/data.service';
 import {AffectationDto} from '../../../models/affectation-dto';
+import {ConfigDialogComponent} from '../../../config-selector/config-dialog/config-dialog.component';
+import {TimeDialogComponent} from './time-dialog/time-dialog.component';
 
 @Component({
   selector: 'app-list-times',
   templateUrl: './list-times.component.html',
   standalone: true,
+  imports: [
+    ConfigDialogComponent,
+    TimeDialogComponent
+  ],
   styleUrls: ['./list-times.component.css']
 })
 export class ListTimesComponent {
@@ -19,6 +25,8 @@ export class ListTimesComponent {
 
   times: TimeDto[] = [];
   isLoading = true;
+  showDialog = false;
+  timeToEdit?: TimeDto;
 
   constructor(private dataService: DataService) {}
 
@@ -39,7 +47,12 @@ export class ListTimesComponent {
   }
 
   onClickTime(time: TimeDto) {
-    console.log('onClickTime:', time);
+    this.timeToEdit = time;
+    this.showDialog = true;
+  }
+
+  onCloseDialog(): void {
+    this.showDialog = false;
   }
 
 }
