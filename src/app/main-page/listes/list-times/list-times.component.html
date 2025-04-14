@@ -1,11 +1,9 @@
 <div>
-  <h3>Liste des Temps</h3>
+  <h3>Passages de l'arrêt {{affectation?.stopName}}, ligne {{affectation?.line}}, vers {{affectation?.destination}}</h3>
   <div class="grid-container">
     <!-- En-têtes -->
     <div class="grid-header-row">
       <div class="grid-header">Course</div>
-      <div class="grid-header">Ligne</div>
-      <div class="grid-header">Destination</div>
       <div class="grid-header">Via</div>
       <div class="grid-header">Quai</div>
       <div class="grid-header">A l'arrêt</div>
@@ -16,14 +14,12 @@
 
     <!-- Données -->
     @for (time of times; track $index) {
-      <div class="grid-row">
+      <div class="grid-row" (click)="onClickTime(time)">
         <div class="grid-item">{{ time.course }}</div>
-        <div class="grid-item">{{ time.line }}</div>
-        <div class="grid-item">{{ time.destination }}</div>
         <div class="grid-item">{{ time.via }}</div>
         <div class="grid-item">{{ time.quai }}</div>
         <div class="grid-item">{{ time.isAQuai ? 'Oui' : 'Non' }}</div>
-        <div class="grid-item">
+        <div class="grid-item flag flag_{{time.flag}}">
           {{ time.flag === 1 ? 'Réel' : time.flag === 7 ? 'Théorique' : time.flag === 4 ? 'Annulé' : time.flag }}
         </div>
         <div class="grid-item">{{ time.heureTheo }}</div>

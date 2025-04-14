@@ -1,6 +1,6 @@
 export class AffectationDto {
   constructor(
-    public ligne: string,
+    public line: string,
     public destination: string,
     public stopCode: string,
     public stopName: string

@@ -1,4 +1,7 @@
-<div>
+@if (isLoading) {
+  <div class="loader"></div>
+} @else {
+  <div>
     <h3>Liste des arrets</h3>
     <ul>
       @for ( stoppoint of stoppoints; track $index) {
@@ -8,4 +11,4 @@
       }
     </ul>
   </div>
-  
+}

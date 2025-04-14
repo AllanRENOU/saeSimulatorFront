@@ -7,6 +7,7 @@ import { ListAffectationsComponent } from "../../list-affectations/list-affectat
   selector: 'app-stoppoint',
   imports: [ListAffectationsComponent],
   templateUrl: './stoppoint.component.html',
+  standalone: true,
   styleUrl: './stoppoint.component.css'
 })
 export class StoppointComponent {
@@ -17,7 +18,7 @@ export class StoppointComponent {
   @Input()
   stoppoint?: StoppointnDto;
 
-  showAffectations: boolean = false; 
+  showAffectations: boolean = false;
 
   toggleAffectations(): void {
     this.showAffectations = !this.showAffectations;

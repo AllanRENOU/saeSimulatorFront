@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { ConfigDto } from '../models/config-dto';
-import { SharedService } from '../services/shared.service';
+import { ConfigDto } from '../../models/config-dto';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-config',
   templateUrl: './config.component.html',
+  standalone: true,
   styleUrls: ['./config.component.css']
 })
 export class ConfigComponent {

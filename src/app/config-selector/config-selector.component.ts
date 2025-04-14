@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { ConfigDto } from '../models/config-dto';
-import { ConfigComponent } from "../config/config.component";
-import { ConfigDialogComponent } from "../config-dialog/config-dialog.component";
+import { ConfigComponent } from "./config/config.component";
+import { ConfigDialogComponent } from "./config-dialog/config-dialog.component";
 
 @Component({
   selector: 'app-config-selector',
   templateUrl: './config-selector.component.html',
   styleUrls: ['./config-selector.component.css'],
+  standalone: true,
   imports: [ConfigComponent, ConfigDialogComponent]
 })
 export class ConfigSelectorComponent implements OnInit {
@@ -32,9 +33,11 @@ export class ConfigSelectorComponent implements OnInit {
   }
 
   onConfigCreated(newConfig: ConfigDto): void {
-    this.configs.push(newConfig);
-    console.log('Configuration créée :', newConfig);
-    this.showDialog = false;
+    this.dataService.createConfig( newConfig ).subscribe(confgi=>{
+      this.configs.push(newConfig);
+      console.log('Configuration créée :', newConfig);
+      this.showDialog = false;
+    });
   }
 
   onCloseDialog(): void {

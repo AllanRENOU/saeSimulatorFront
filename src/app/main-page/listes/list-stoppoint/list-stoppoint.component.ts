@@ -8,25 +8,33 @@ import { StoppointComponent } from "./stoppoint/stoppoint.component";
   selector: 'app-list-stoppoint',
   imports: [StoppointComponent],
   templateUrl: './list-stoppoint.component.html',
+  standalone: true,
   styleUrl: './list-stoppoint.component.css'
 })
 export class ListStoppointComponent {
   @Input()
   config?: ConfigDto;
   stoppoints: StoppointnDto[] = [];
+  isLoading: boolean = true;
 
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.dataService.getStoppoints().subscribe(
-      (data) => {
-        this.stoppoints = data;
-      },
-      (error) => {
-        console.error('Erreur lors de la récupération des stoppoints :', error);
-      }
-    );
+    if( this.config){
+      this.isLoading = true;
+      this.dataService.getStoppoints(this.config).subscribe(
+        (data) => {
+          this.stoppoints = data;
+          this.isLoading = false;
+        },
+        (error) => {
+          console.error('Erreur lors de la récupération des stoppoints :', error);
+          this.isLoading = false;
+        }
+      );
+    }
+
   }
 
 }

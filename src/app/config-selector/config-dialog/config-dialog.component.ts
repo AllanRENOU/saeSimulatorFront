@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ConfigDto } from '../models/config-dto';
+import { ConfigDto } from '../../models/config-dto';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
   ],
   selector: 'app-config-dialog',
   templateUrl: './config-dialog.component.html',
+  standalone: true,
   styleUrl: './config-dialog.component.css'
 })
 export class ConfigDialogComponent {

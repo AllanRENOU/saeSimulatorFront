@@ -2,7 +2,7 @@
   @if (activeComponent == "list-message") {
     <app-list-message [config]="currentConfig"></app-list-message>
   } @else if (activeComponent == "list-times") {
-    <app-list-times [config]="currentConfig"></app-list-times>
+    <app-list-times [config]="currentConfig" [affectation]="currentAffectation"></app-list-times>
   } @else if (activeComponent == "list-affectations") {
     <app-list-affectations [config]="currentConfig"></app-list-affectations>
   } @else if (activeComponent == "list-stoppoints") {

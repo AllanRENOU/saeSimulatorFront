@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { ConfigDto } from '../models/config-dto';
 import { AffectationDto } from '../models/affectation-dto';
 import { StoppointnDto } from '../models/stoppoint-dto';
+import {TimeDto} from '../models/time-dto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private url = 'http://localhost:85/';
+  private url = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) {}
 
@@ -18,16 +19,20 @@ export class DataService {
     return this.http.get<ConfigDto[]>(this.url + 'config');
   }
 
-  getStoppoints(): Observable<StoppointnDto[]> {
-    return this.http.get<StoppointnDto[]>(this.url + 'stoppoints');
+  createConfig(config : ConfigDto): Observable<ConfigDto>{
+    return this.http.post<ConfigDto>(this.url + 'config', config);
+  }
+
+  getStoppoints(config: ConfigDto): Observable<StoppointnDto[]> {
+    return this.http.get<StoppointnDto[]>(this.url + 'arret?configId='+config.id);
   }
 
   // Méthode pour récupérer les affectations
-  getAffectations(): Observable<AffectationDto[]> {
-    return this.http.get<AffectationDto[]>(this.url + 'affectation');
+  getAffectations(config: ConfigDto, stoppoint: StoppointnDto): Observable<AffectationDto[]> {
+    return this.http.get<AffectationDto[]>(this.url + 'affectations?configId='+config.id+"&stopCode="+stoppoint.area);
   }
 
-  getTimes(): Observable<any[]> {
-    return this.http.get<any[]>(this.url + 'times');
+  getTimes(config: ConfigDto, affectation: AffectationDto): Observable<TimeDto[]> {
+    return this.http.get<TimeDto[]>(this.url + 'times?configId='+config.id+ "&stopCode=" + affectation.stopCode + "&line="+affectation.line +"&destination=" + affectation.destination);
   }
 }

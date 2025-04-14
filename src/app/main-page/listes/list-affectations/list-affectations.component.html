@@ -4,7 +4,7 @@
 <ul>
   @for (affectation of affectations; track $index) {
     <li (click)="onAffectationClick(affectation)">
-      [{{affectation.stopCode}}] Ligne {{ affectation.ligne }} vers {{affectation.destination}}
+      Ligne {{ affectation.line }} vers {{affectation.destination}}
     </li>
   }@empty {
     <li>Aucune affectation trouvée.</li>

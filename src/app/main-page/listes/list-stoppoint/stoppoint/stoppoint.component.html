@@ -1,11 +1,13 @@
 <div class="stoppoint" (click)="toggleAffectations()">
   @if (stoppoint) {
-    {{ stoppoint.name }} - {{ stoppoint.ident }} - {{ stoppoint.area }}
+    {{ stoppoint.nom }} ({{ stoppoint.ident }} - {{ stoppoint.area }})
   } @else {
     Pas d'information sur l'arrêt.
   }
 </div>
+@if (showAffectations){
+  <div class="affectations-container" [class.show]="showAffectations">
+    <app-list-affectations [config]="config" [stoppoint]="stoppoint"></app-list-affectations>
+  </div>
+}
 
-<div class="affectations-container" [class.show]="showAffectations">
-    <app-list-affectations [config]="config"></app-list-affectations>
-</div>
